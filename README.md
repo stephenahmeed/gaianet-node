@@ -42,7 +42,7 @@ docker exec -it gaianet /root/gaianet/bin/gaianet info
 Copy the **Node ID** and **Device ID**, then type `exit` to detach from the container.
 
 ### 4. Connect Node to Gaianet
-1. Visit the [Gaianet site](https://gaianet.network) and connect your wallet.
+1. Visit the [Gaianet site](https://www.gaianet.ai/setting/nodes) and connect your wallet.
 2. Click on **Connect New Node** and enter your **Node ID** and **Device ID**.
 3. Click **Join**.
 4. Customize the following URL with your **Node ID**, and visit it to start chatting with the bot:
