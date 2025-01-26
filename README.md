@@ -16,27 +16,35 @@ Easily run a Gaianet Node using Docker. This guide walks you through the setup a
 
 ## Installation Steps
 
-### 1. Install Docker
-If Docker is not installed, run the following commands:
+### 1. Install and Run Gaianet Docker Image
 
 ```bash
-source <(wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/docker.sh)
-sudo groupadd docker && sudo usermod -aG docker $(whoami) && newgrp docker
-```
+curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
 
-### 2. Install and Run Gaianet Docker Image
+```
+Added Path Now
 
 ```bash
-sudo docker run --name gaianet -p 6969:6969 -v $(pwd)/qdrant_storage:/root/gaianet/qdrant/storage:z gaianet/phi-3-mini-instruct-4k_paris:latest
+source /root/.bashrc
 ```
 
-Once the setup is complete and the terminal displays the running container, close and reopen the terminal.
+### 2. Run Model
+
+```bash
+gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
+```
+
+Start The Node 
+
+```bash
+gaianet start
+```
 
 ### 3. Get Node Info
 Run the following command to retrieve your **Node ID** and **Device ID**:
 
 ```bash
-docker exec -it gaianet /root/gaianet/bin/gaianet info
+gaianet info
 ```
 
 Copy the **Node ID** and **Device ID**, then type `exit` to detach from the container.
